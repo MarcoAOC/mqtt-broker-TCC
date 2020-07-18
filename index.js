@@ -5,6 +5,8 @@ const mosca = require('mosca');
 var mqttServ = new mosca.Server({});
 
 var authenticate = function (client, username, password, callback) {
+    console.log(username);
+    console.log(password);
     var authorized = (username === process.env.CLIENT_ID && password.toString() === process.env.CLIENT_SECRET );
     if (authorized) client.user = username;
     callback(null, authorized);

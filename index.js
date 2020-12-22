@@ -18,6 +18,6 @@ function setup() {
 mqttServ.on("ready", setup);
 mqttServ.attachHttpServer(httpServ);
 
-httpServ.listen(process.env.PORT || 8080, function (port) {
-  console.log("websocket server listening on port", port);
+httpServ.listen(process.env.PORT || 8080, function () {
+  console.log("websocket server listening on port", process.env.PORT);
 });
